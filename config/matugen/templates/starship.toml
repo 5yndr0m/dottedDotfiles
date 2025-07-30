@@ -1,0 +1,167 @@
+# Lagom Starship Config - Just enough, not too much
+# version: 1.0.0
+
+add_newline = true
+continuation_prompt = "... "
+palette = 'lagom'
+
+format = """$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$docker_context\
+$kubernetes\
+$aws\
+$gcloud\
+$azure\
+$python\
+$nodejs\
+$rust\
+$golang\
+$java\
+$terraform\
+$character"""
+
+right_format = """$cmd_duration\
+$time"""
+
+[palettes.lagom]
+# Primary colors for main elements
+primary = '{{colors.primary.default.hex}}'
+primary_dim = '{{colors.primary_fixed_dim.default.hex}}'
+on_primary = '{{colors.on_primary.default.hex}}'
+
+# Surface colors for backgrounds
+surface = '{{colors.surface.default.hex}}'
+surface_dim = '{{colors.surface_dim.default.hex}}'
+surface_container = '{{colors.surface_container.default.hex}}'
+on_surface_variant = '{{colors.on_surface_variant.default.hex}}'
+
+# Accent colors
+tertiary = '{{colors.tertiary.default.hex}}'
+error = '{{colors.error.default.hex}}'
+
+[character]
+success_symbol = "[>](tertiary bold)"
+error_symbol = "[x](error bold)"
+vimcmd_symbol = "[:](@{primary})"
+
+[username]
+style_user = "primary"
+style_root = "error"
+format = "[$user](fg:$style)@"
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[$hostname](fg:primary) "
+
+[directory]
+truncation_length = 3
+truncation_symbol = ".../"
+read_only = " [RO]"
+format = "[$path](fg:on_surface_variant)[$read_only](fg:error) "
+
+[git_branch]
+format = "[$branch](fg:primary) "
+truncation_length = 20
+truncation_symbol = "..."
+
+[git_status]
+format = "[$all_status$ahead_behind](fg:tertiary)"
+conflicted = "!"
+ahead = "↑${count}"
+behind = "↓${count}"
+diverged = "↑${ahead_count}↓${behind_count}"
+up_to_date = ""
+untracked = "?"
+stashed = "$"
+modified = "*"
+staged = "+"
+renamed = "»"
+deleted = "x"
+
+[cmd_duration]
+min_time = 2000
+format = "[$duration](fg:on_surface_variant) "
+
+[time]
+disabled = false
+format = "[$time](fg:primary_dim)"
+time_format = "%H:%M"
+
+# Language indicators - minimal, no versions
+[python]
+format = "[py](fg:primary) "
+
+[nodejs]
+format = "[js](fg:tertiary) "
+
+[rust]
+format = "[rs](fg:error) "
+
+[golang]
+format = "[go](fg:primary) "
+
+[java]
+format = "[java](fg:error) "
+
+[lua]
+format = "[lua](fg:primary) "
+
+[ruby]
+format = "[rb](fg:error) "
+
+# Cloud and infrastructure
+[terraform]
+format = "[tf](fg:primary) "
+
+[docker_context]
+format = "[docker](fg:primary) "
+
+[kubernetes]
+format = "[k8s](fg:primary) "
+
+[aws]
+format = "[aws](fg:tertiary) "
+
+[gcloud]
+format = "[gcp](fg:primary) "
+
+[azure]
+format = "[az](fg:primary) "
+
+# Disable everything else
+[package]
+disabled = true
+
+[battery]
+disabled = true
+
+[sudo]
+disabled = true
+
+[jobs]
+disabled = true
+
+[memory_usage]
+disabled = true
+
+[localip]
+disabled = true
+
+[shlvl]
+disabled = true
+
+[shell]
+disabled = true
+
+[container]
+disabled = true
+
+[singularity]
+disabled = true
+
+[nix_shell]
+disabled = true

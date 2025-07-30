@@ -1,0 +1,42 @@
+[config]
+version_check = false
+
+[templates.hyprland]
+input_path = '/home/syndrom/.config/matugen/templates/hyprland.conf'
+output_path = '/home/syndrom/.config/hypr/modules/colors.conf'
+
+[templates.hyprlock]
+input_path = '/home/syndrom/.config/matugen/templates/hyprlock.conf'
+output_path = '/home/syndrom/.config/hypr/hyprlock.conf'
+
+[templates.starship]
+input_path = '/home/syndrom/.config/matugen/templates/starship.toml'
+output_path = '~/.config/starship.toml'
+
+[templates.kitty]
+input_path = '/home/syndrom/.config/matugen/templates/kitty-colors.conf'
+output_path = '~/.config/kitty/colors.conf'
+
+[templates.gtk3]
+input_path = '/home/syndrom/.config/matugen/templates/gtk-colors.css'
+output_path = '/home/syndrom/.config/gtk-3.0/gtk.css'
+
+[templates.waybar]
+input_path = '/home/syndrom/.config/matugen/templates/style.css'
+output_path = '/home/syndrom/.config/waybar/colors.css'
+
+[templates.wlogout]
+input_path = '/home/syndrom/.config/matugen/templates/style.css'
+output_path = '/home/syndrom/.config/wlogout/colors.css'
+
+[templates.rofi]
+input_path = '/home/syndrom/.config/matugen/templates/base.rasi'
+output_path = '/home/syndrom/.config/rofi/themes/colors.rasi'
+
+[templates.dunst]
+input_path = '/home/syndrom/.config/matugen/templates/dunstrc'
+output_path = '/home/syndrom/.config/dunst/dunstrc'
+
+[templates.wallpaper]
+input_path = '/home/syndrom/.config/matugen/templates/wallpaper.txt'
+output_path = '/home/syndrom/.config/matugen/wallpaper.txt'
