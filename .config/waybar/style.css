@@ -1,0 +1,119 @@
+/* Import Matugen colors */
+@import url("colors.css");
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Opensans Semibold";
+    font-size: 12px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @on_surface;
+}
+
+tooltip {
+    background: @surface_container_high;
+    border-radius: 12px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: @outline_variant;
+}
+
+#workspaces button {
+    padding: 3px 8px;
+    color: @on_surface_variant;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    color: @on_primary;
+    background-color: @primary;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(255, 180, 170, 0.3);
+}
+
+#workspaces button.focused {
+    color: @on_primary_container;
+    background-color: @primary_container;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(115, 52, 45, 0.5);
+}
+
+#workspaces button.urgent {
+    color: @on_error;
+    background-color: @error;
+    border-radius: 12px;
+    animation: urgent-blink 1s infinite;
+}
+
+#workspaces button:hover {
+    background-color: @surface_container_high;
+    color: @on_surface;
+    border-radius: 12px;
+}
+
+#custom-date,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#workspaces,
+#custom-power-profile {
+    background-color: @surface_container;
+    padding: 3px 8px;
+    margin: 3px 0px;
+}
+
+#workspaces {
+    background-color: @surface_container_high;
+    border-radius: 12px 0px 0px 12px;
+}
+
+#custom-date {
+    color: @tertiary;
+}
+
+#custom-power-profile {
+    color: @secondary;
+    border-radius: 0px 12px 12px 0px;
+    margin-right: 20px;
+}
+
+#custom-power-profile:hover {
+    background-color: @surface_container_high;
+}
+
+#clock {
+    color: @primary;
+}
+
+#battery {
+    color: @tertiary;
+}
+
+#battery.charging {
+    color: @tertiary;
+}
+
+#battery.warning:not(.charging) {
+    background-color: @error_container;
+    color: @on_error_container;
+}
+
+#battery.critical:not(.charging) {
+    background-color: @error;
+    color: @on_error;
+}
+
+#network {
+    color: @secondary;
+    border-radius: 0px 0px 0px 0px;
+}
+
+#pulseaudio {
+    color: @on_surface_variant;
+}
