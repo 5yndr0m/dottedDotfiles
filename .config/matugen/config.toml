@@ -1,30 +1,34 @@
 [config]
 version_check = false
 
-[templates.m3colors]
-input_path = '~/.config/matugen/templates/colors.json'
-output_path = '~/.local/state/quickshell/user/generated/colors.json'
-
 [templates.hyprland]
-input_path = '~/.config/matugen/templates/hyprland.conf'
-output_path = '~/.config/hypr/modules/colors.conf'
+input_path = '/home/syndrom/.config/matugen/templates/hyprland.conf'
+output_path = '/home/syndrom/.config/hypr/modules/colors.conf'
 
 [templates.hyprlock]
-input_path = '~/.config/matugen/templates/hyprlock.conf'
-output_path = '~/.config/hypr/hyprlock.conf'
-
-[templates.fuzzel]
-input_path = '~/.config/matugen/templates/fuzzel/fuzzel_theme.ini'
-output_path = '~/.config/fuzzel/fuzzel_theme.ini'
+input_path = '/home/syndrom/.config/matugen/templates/hyprlock.conf'
+output_path = '/home/syndrom/.config/hypr/hyprlock.conf'
 
 [templates.gtk3]
-input_path = '~/.config/matugen/templates/gtk-colors.css'
-output_path = '~/.config/gtk-3.0/gtk.css'
+input_path = '/home/syndrom/.config/matugen/templates/gtk-colors.css'
+output_path = '/home/syndrom/.config/gtk-3.0/gtk.css'
 
-[templates.gtk4]
-input_path = '~/.config/matugen/templates/gtk-colors.css'
-output_path = '~/.config/gtk-4.0/gtk.css'
+[templates.waybar]
+input_path = '/home/syndrom/.config/matugen/templates/style.css'
+output_path = '/home/syndrom/.config/waybar/colors.css'
+
+[templates.wlogout]
+input_path = '/home/syndrom/.config/matugen/templates/style.css'
+output_path = '/home/syndrom/.config/wlogout/colors.css'
+
+[templates.rofi]
+input_path = '/home/syndrom/.config/matugen/templates/base.rasi'
+output_path = '/home/syndrom/.config/rofi/themes/colors.rasi'
+
+[templates.dunst]
+input_path = '/home/syndrom/.config/matugen/templates/dunstrc'
+output_path = '/home/syndrom/.config/dunst/dunstrc'
 
 [templates.wallpaper]
-input_path = '~/.config/matugen/templates/wallpaper.txt'
-output_path = '~/.local/state/quickshell/user/generated/wallpaper/path.txt'
+input_path = '/home/syndrom/.config/matugen/templates/wallpaper.txt'
+output_path = '/home/syndrom/.config/matugen/wallpaper.txt'
