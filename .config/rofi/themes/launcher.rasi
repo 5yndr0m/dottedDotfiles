@@ -1,0 +1,171 @@
+/**
+ * Rofi App Launcher Theme
+ * Place this as ~/.config/rofi/themes/launcher.rasi
+ */
+
+configuration {
+    modi:                       "drun";
+    show-icons:                 true;
+    display-drun:               " Apps";
+    drun-display-format:        "{icon} {name}";
+    disable-history:            false;
+    hide-scrollbar:             true;
+    sidebar-mode:               false;
+}
+
+@import "colors.rasi"
+@import "fonts.rasi"
+
+* {
+    border-colour:               var(outline-variant);
+    handle-colour:               var(on-surface-variant);
+    background-colour:           var(surface);
+    foreground-colour:           var(on-surface);
+    alternate-background:        var(surface-container);
+    normal-background:           var(surface);
+    normal-foreground:           var(on-surface);
+    urgent-background:           var(error-container);
+    urgent-foreground:           var(on-error-container);
+    active-background:           var(secondary-container);
+    active-foreground:           var(on-secondary-container);
+    selected-normal-background:  var(primary-container);
+    selected-normal-foreground:  var(on-primary-container);
+    selected-urgent-background:  var(error);
+    selected-urgent-foreground:  var(on-error);
+    selected-active-background:  var(secondary);
+    selected-active-foreground:  var(on-secondary);
+    alternate-normal-background: var(surface);
+    alternate-normal-foreground: var(on-surface);
+    alternate-urgent-background: var(error-container);
+    alternate-urgent-foreground: var(on-error-container);
+    alternate-active-background: var(secondary-container);
+    alternate-active-foreground: var(on-secondary-container);
+}
+
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       400px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               20px;
+    border-color:                @border-colour;
+    cursor:                      "default";
+    background-color:            @background-colour;
+}
+
+mainbox {
+    enabled:                     true;
+    spacing:                     5px;
+    margin:                      5px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               20px;
+    border-color:                @border-colour;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+inputbar {
+    enabled:                     true;
+    spacing:                     12px;
+    margin:                      0px;
+    padding:                     10px;
+    border:                      0px 0px 2px 0px;
+    border-radius:               20px 20px 0px 0px;
+    border-color:                @border-colour;
+    background-color:            @alternate-background;
+    text-color:                  @foreground-colour;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @selected-normal-background;
+    font:                        "Open Sans Bold 12";
+}
+
+entry {
+    enabled:                     true;
+    background-color:            transparent;
+    text-color:                  @foreground-colour;
+    cursor:                      text;
+    placeholder:                 "Search applications...";
+    placeholder-color:           @handle-colour;
+}
+
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       7;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    spacing:                     0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               10px;
+    border-color:                @border-colour;
+    background-color:            transparent;
+    text-color:                  @foreground-colour;
+    cursor:                      "default";
+}
+
+scrollbar {
+    handle-width:                4px;
+    handle-color:                @handle-colour;
+    border-radius:               8px;
+    background-color:            @alternate-background;
+}
+
+element {
+    enabled:                     true;
+    spacing:                     12px;
+    margin:                      0px;
+    padding:                     10px 15px;
+    border:                      0px solid;
+    border-radius:               20px;
+    border-color:                @border-colour;
+    background-color:            transparent;
+    text-color:                  @foreground-colour;
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            var(normal-background);
+    text-color:                  var(normal-foreground);
+}
+
+element selected.normal {
+    background-color:            var(selected-normal-background);
+    text-color:                  var(selected-normal-foreground);
+    border-radius:               20px;
+}
+
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        16px;
+    cursor:                      inherit;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
