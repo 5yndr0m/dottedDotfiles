@@ -1,4 +1,5 @@
 <div align="center">
+    <img src="./assets/logo.png">
 </div>
 
 <hr style="width:40%;">
