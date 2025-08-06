@@ -9,6 +9,7 @@
     "pulseaudio",
     "battery",
     "custom/power-profile",
+    "tray",
   ],
   // Modules configuration
   "hyprland/workspaces": {
@@ -56,6 +57,10 @@
   "clock": {
     "format": "{:%H:%M} ",
     "tooltip": false,
+  },
+  "tray": {
+    "icon-size": 14,
+    "spacing": 8,
   },
   "battery": {
     "states": {

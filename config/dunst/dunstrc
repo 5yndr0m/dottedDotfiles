@@ -20,7 +20,7 @@
     horizontal_padding = 12
     text_icon_padding = 8
     corner_radius = 8
-    frame_width = 0
+    frame_width = 1
     gap_size = 5
     separator_color = frame
     sort = yes
@@ -53,93 +53,113 @@
     mouse_left_click = close_current
     mouse_middle_click = do_action, close_current
     mouse_right_click = close_all
-    frame_color = "#bac3ff"
-    highlight = "#bac3ff"
-    separator_color = "#90909a"
+    # Rose Pine colors for global
+    background = "#191724"
+    foreground = "#e0def4"
+    frame_color = "#6e6a86"
+    highlight = "#f6c177"
+    separator_color = "#6e6a86"
+
 [experimental]
     per_monitor_dpi = false
+
 [urgency_low]
-    background = "#121318"
-    foreground = "#e4e1e9"
-    frame_color = "#bac3ff"
-    highlight = "#394379"
+    background = "#1f1d2e"
+    foreground = "#e0def4"
+    frame_color = "#31748f"
+    highlight = "#31748f"
     timeout = 5
+
 [urgency_normal]
-    background = "#121318"
-    foreground = "#e4e1e9"
-    frame_color = "#bac3ff"
-    highlight = "#394379"
+    background = "#26233a"
+    foreground = "#e0def4"
+    frame_color = "#f6c177"
+    highlight = "#f6c177"
     timeout = 8
+
 [urgency_critical]
-    background = "#121318"
-    foreground = "#e4e1e9"
-    frame_color = "#ffb4ab"
-    highlight = "#ffb4ab"
+    background = "#26233a"
+    foreground = "#e0def4"
+    frame_color = "#eb6f92"
+    highlight = "#eb6f92"
     timeout = 0
+
+# App-specific sections with Rose Pine accent colors
 [discord]
     appname = discord
-    background = "#5865f2"
-    foreground = "#ffffff"
-    frame_color = "#7289da"
+    background = "#c4a7e7"
+    foreground = "#191724"
+    frame_color = "#c4a7e7"
     timeout = 8
     format = "<span weight='bold'>Discord</span>\n%b"
+
 [zen-browser]
     appname = zen-browser
-    background = "#ff7139"
-    foreground = "#ffffff"
-    frame_color = "#ff9500"
+    background = "#f6c177"
+    foreground = "#191724"
+    frame_color = "#f6c177"
     timeout = 5
+
 [materialgram]
     appname = materialgram
-    background = "#0088cc"
-    foreground = "#ffffff"
-    frame_color = "#2ea6ff"
+    background = "#9ccfd8"
+    foreground = "#191724"
+    frame_color = "#9ccfd8"
     timeout = 8
+
 [volume]
     appname = "Volume Control"
-    background = "#6366f1"
-    foreground = "#ffffff"
-    frame_color = "#8b5cf6"
+    background = "#c4a7e7"
+    foreground = "#191724"
+    frame_color = "#c4a7e7"
     timeout = 2
     format = "<span weight='bold'>🔊 %s</span>\n%b"
+
 [brightness]
     appname = "Brightness"
-    background = "#f59e0b"
-    foreground = "#000000"
-    frame_color = "#fbbf24"
+    background = "#f6c177"
+    foreground = "#191724"
+    frame_color = "#f6c177"
     timeout = 2
     format = "<span weight='bold'>☀️ %s</span>\n%b"
+
 [battery]
     appname = "Battery Warning"
-    background = "#dc2626"
-    foreground = "#ffffff"
-    frame_color = "#ef4444"
+    background = "#eb6f92"
+    foreground = "#e0def4"
+    frame_color = "#eb6f92"
     timeout = 10
     format = "<span weight='bold'>🔋 Battery Alert</span>\n%b"
+
 [caffeine]
     appname = "Caffeine"
-    background = "#8b5a2b"
-    foreground = "#ffffff"
-    frame_color = "#a0621e"
+    background = "#ebbcba"
+    foreground = "#191724"
+    frame_color = "#ebbcba"
     timeout = 2
     format = "<span weight='bold'>%s</span>\n%b"
+
 [signed_on]
     appname = Pidgin
     summary = "*signed on*"
     urgency = low
+
 [signed_off]
     appname = Pidgin
     summary = "*signed off*"
     urgency = low
+
 [says]
     appname = Pidgin
     summary = "*says*"
     urgency = critical
     format = "%s "%b""
+
 [music]
     appname = Amarok
     summary = "Now playing"
     urgency = low
+
 [urls]
     summary = "*"
     body = "*http*"

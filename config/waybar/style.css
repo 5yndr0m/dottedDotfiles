@@ -79,8 +79,6 @@ tooltip {
 
 #custom-power-profile {
     color: @secondary;
-    border-radius: 0px 12px 12px 0px;
-    margin-right: 20px;
 }
 
 #custom-power-profile:hover {
@@ -116,4 +114,20 @@ tooltip {
 
 #pulseaudio {
     color: @on_surface_variant;
+}
+
+#tray {
+    background-color: @surface_container;
+    padding: 3px 8px;
+    margin: 3px 0px;
+    border-radius: 0px 12px 12px 0px;
+    margin-right: 20px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
 }

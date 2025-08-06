@@ -1,22 +1,28 @@
 # Start Hyprland with UWSM if conditions are met
-if uwsm check may-start
+if status is-login; and not set -q TMUX; and uwsm check may-start
     exec uwsm start hyprland-uwsm.desktop
 end
 
 # Start SSH Agent
-if not pgrep -f ssh-agent > /dev/null
+if not pgrep -f ssh-agent >/dev/null
     eval (ssh-agent -c)
     set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
     set -Ux SSH_AGENT_PID $SSH_AGENT_PID
 end
 
 # Fix tmux compositor error in Hyprland
-if test -n "$TMUX"
-    set -e WAYLAND_DISPLAY
-end
+#if test -n "$TMUX"
+#    set -e WAYLAND_DISPLAY
+#end
 
 # Create an alias in your fish config
-alias tmux='env -u WAYLAND_DISPLAY tmux'
+# alias tmux='env -u WAYLAND_DISPLAY tmux'
+
+# Add rose pine theme
+fish_config theme choose "Rosé Pine"
+
+# Add atuin plugin
+atuin init fish | source
 
 # Initialize starship
 starship init fish | source
@@ -95,7 +101,6 @@ alias meminfo='free -h'
 alias cpuinfo='lscpu'
 alias diskinfo='lsblk'
 alias netinfo='ip addr show'
-
 
 # Functions
 function mkcd

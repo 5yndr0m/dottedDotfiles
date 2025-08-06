@@ -1,9 +1,10 @@
-# Lagom Starship Config - Just enough, not too much
+# Rose Pine Starship Config - Just enough, not too much
 # version: 1.0.0
+"$schema" = 'https://starship.rs/config-schema.json'
 
 add_newline = true
 continuation_prompt = "... "
-palette = 'lagom'
+palette = 'rose-pine'
 
 format = """$username\
 $hostname\
@@ -26,111 +27,144 @@ $character"""
 right_format = """$cmd_duration\
 $time"""
 
-[palettes.lagom]
-# Primary colors for main elements
-primary = '#bac3ff'
-primary_dim = '#bac3ff'
-on_primary = '#222c61'
-
-# Surface colors for backgrounds
-surface = '#121318'
-surface_dim = '#121318'
-surface_container = '#1f1f25'
-on_surface_variant = '#c6c5d0'
-
-# Accent colors
-tertiary = '#e5bad8'
-error = '#ffb4ab'
+[palettes.rose-pine]
+# Base Rose Pine colors
+base = '#191724'
+surface = '#1f1d2e'
+overlay = '#26233a'
+muted = '#6e6a86'
+subtle = '#908caa'
+text = '#e0def4'
+love = '#eb6f92'
+gold = '#f6c177'
+rose = '#ebbcba'
+pine = '#31748f'
+foam = '#9ccfd8'
+iris = '#c4a7e7'
+highlight_low = '#21202e'
+highlight_med = '#403d52'
+highlight_high = '#524f67'
 
 [character]
-success_symbol = "[>](tertiary bold)"
-error_symbol = "[x](error bold)"
-vimcmd_symbol = "[:](@{primary})"
+success_symbol = "[>](foam bold)"
+error_symbol = "[x](love bold)"
+vimcmd_symbol = "[:](@{iris})"
 
 [username]
-style_user = "primary"
-style_root = "error"
-format = "[$user](fg:$style)@"
+style_user = "bg:overlay fg:iris"
+style_root = "bg:overlay fg:love"
+format = "[](fg:overlay)[ 󰧱 $user ]($style)[](fg:overlay)@"
 show_always = true
 
 [hostname]
 ssh_only = false
-format = "[$hostname](fg:primary) "
+format = "[](fg:overlay)[ $hostname ]($style)[](fg:overlay) "
+style = "bg:overlay fg:iris"
 
 [directory]
 truncation_length = 3
-truncation_symbol = ".../"
+truncation_symbol = "…/"
 read_only = " [RO]"
-format = "[$path](fg:on_surface_variant)[$read_only](fg:error) "
+format = "[](fg:overlay)[ $path ]($style)[](fg:overlay)[$read_only](fg:love) "
+style = "bg:overlay fg:pine"
+
+[directory.substitutions]
+Documents = "󰈙"
+Downloads = " "
+Music = " "
+Pictures = " "
 
 [git_branch]
-format = "[$branch](fg:primary) "
+format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) "
+style = "bg:overlay fg:foam"
+symbol = ""
 truncation_length = 20
 truncation_symbol = "..."
 
 [git_status]
-format = "[$all_status$ahead_behind](fg:tertiary)"
-conflicted = "!"
-ahead = "↑${count}"
-behind = "↓${count}"
-diverged = "↑${ahead_count}↓${behind_count}"
-up_to_date = ""
-untracked = "?"
-stashed = "$"
-modified = "*"
-staged = "+"
-renamed = "»"
-deleted = "x"
+disabled = false
+style = "bg:overlay fg:love"
+format = '[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) '
+up_to_date = '[ ✓ ](bg:overlay fg:iris)'
+conflicted = '[!](bg:overlay fg:love)'
+untracked = '[?\($count\)](bg:overlay fg:gold)'
+stashed = '[\$](bg:overlay fg:iris)'
+modified = '[*\($count\)](bg:overlay fg:gold)'
+staged = '[+\($count\)](bg:overlay fg:gold)'
+renamed = '[»\($count\)](bg:overlay fg:iris)'
+deleted = '[x\($count\)](bg:overlay fg:love)'
+ahead = '[⇡\(${count}\)](bg:overlay fg:foam)'
+behind = '[⇣\(${count}\)](bg:overlay fg:rose)'
+diverged = '⇕[\[](bg:overlay fg:iris)[⇡\(${ahead_count}\)](bg:overlay fg:foam)[⇣\(${behind_count}\)](bg:overlay fg:rose)[\]](bg:overlay fg:iris)'
 
 [cmd_duration]
 min_time = 2000
-format = "[$duration](fg:on_surface_variant) "
+format = "[](fg:overlay)[ $duration ]($style)[](fg:overlay) "
+style = "bg:overlay fg:text"
 
 [time]
 disabled = false
-format = "[$time](fg:primary_dim)"
+format = "[](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)"
+style = "bg:overlay fg:rose"
 time_format = "%H:%M"
 
-# Language indicators - minimal, no versions
+# Language indicators - minimal, no versions but with Rose Pine styling
 [python]
-format = "[py](fg:primary) "
+format = "[](fg:overlay)[ py ]($style)[](fg:overlay) "
+style = "bg:overlay fg:pine"
 
 [nodejs]
-format = "[js](fg:tertiary) "
+format = "[](fg:overlay)[ js ]($style)[](fg:overlay) "
+style = "bg:overlay fg:pine"
+symbol = "󰎙 "
 
 [rust]
-format = "[rs](fg:error) "
+format = "[](fg:overlay)[ rs ]($style)[](fg:overlay) "
+style = "bg:overlay fg:pine"
+symbol = " "
 
 [golang]
-format = "[go](fg:primary) "
+format = "[](fg:overlay)[ go ]($style)[](fg:overlay) "
+style = "bg:overlay fg:pine"
+symbol = " "
 
 [java]
-format = "[java](fg:error) "
+format = "[](fg:overlay)[ java ]($style)[](fg:overlay) "
+style = "bg:overlay fg:pine"
+symbol = " "
 
 [lua]
-format = "[lua](fg:primary) "
+format = "[](fg:overlay)[ lua ]($style)[](fg:overlay) "
+style = "bg:overlay fg:pine"
 
 [ruby]
-format = "[rb](fg:error) "
+format = "[](fg:overlay)[ rb ]($style)[](fg:overlay) "
+style = "bg:overlay fg:pine"
 
 # Cloud and infrastructure
 [terraform]
-format = "[tf](fg:primary) "
+format = "[](fg:overlay)[ tf ]($style)[](fg:overlay) "
+style = "bg:overlay fg:pine"
 
 [docker_context]
-format = "[docker](fg:primary) "
+format = "[](fg:overlay)[ docker ]($style)[](fg:overlay) "
+style = "bg:overlay fg:pine"
 
 [kubernetes]
-format = "[k8s](fg:primary) "
+format = "[](fg:overlay)[ k8s ]($style)[](fg:overlay) "
+style = "bg:overlay fg:pine"
 
 [aws]
-format = "[aws](fg:tertiary) "
+format = "[](fg:overlay)[ aws ]($style)[](fg:overlay) "
+style = "bg:overlay fg:foam"
 
 [gcloud]
-format = "[gcp](fg:primary) "
+format = "[](fg:overlay)[ gcp ]($style)[](fg:overlay) "
+style = "bg:overlay fg:pine"
 
 [azure]
-format = "[az](fg:primary) "
+format = "[](fg:overlay)[ az ]($style)[](fg:overlay) "
+style = "bg:overlay fg:pine"
 
 # Disable everything else
 [package]

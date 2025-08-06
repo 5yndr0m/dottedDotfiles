@@ -1,8 +1,11 @@
 window {
     padding: 0;
     border-radius: 10px;
-    border: solid 1px #1b1d1d;
-    background: alpha(black, 0.75);
+    border: solid 1px #403d52; /* Rosé Pine "Highlight Med" for border */
+    background: alpha(
+        #191724,
+        0.9
+    ); /* Rosé Pine Base (dark) with transparency */
 }
 
 #container {
@@ -11,7 +14,7 @@ window {
 
 image,
 label {
-    color: #ffffff;
+    color: #e0def4; /* Rosé Pine "Base" (light text) */
 }
 
 progressbar:disabled,
@@ -25,15 +28,17 @@ progressbar {
     background: transparent;
     border: none;
 }
+
 trough {
     min-height: inherit;
     border-radius: inherit;
     border: none;
-    background: alpha(#ffffff, 0.5);
+    background: alpha(#6e6a86, 0.3); /* Rosé Pine "Overlay" (muted) */
 }
+
 progress {
     min-height: inherit;
     border-radius: inherit;
     border: none;
-    background: #ffffff;
+    background: #f6c177; /* Rosé Pine "Gold" (accent for progress) */
 }

@@ -1,8 +1,11 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export SSH_AGENT_PID:8605
-SETUVAR --export SSH_AUTH_SOCK:/tmp/ssh\x2dXXXXXXDgSj9W/agent\x2e8604
+SETUVAR --export SSH_AGENT_PID:1742
+SETUVAR --export SSH_AUTH_SOCK:/tmp/ssh\x2dXXXXXXWrtVlL/agent\x2e1741
 SETUVAR __fish_initialized:3800
+SETUVAR _fisher_plugins:rose\x2dpine/fish
+SETUVAR _fisher_rose_2D_pine_2F_fish_files:\x7e/\x2econfig/fish/themes/Ros\u00e9\x20Pine\x20Dawn\x2etheme\x1e\x7e/\x2econfig/fish/themes/Ros\u00e9\x20Pine\x20Moon\x2etheme\x1e\x7e/\x2econfig/fish/themes/Ros\u00e9\x20Pine\x2etheme
+SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:6c7086
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:74c0fc
