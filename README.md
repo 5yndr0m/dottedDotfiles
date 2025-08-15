@@ -1,6 +1,6 @@
 # dottedDotfiles ✨
 
-> My personal dotfiles collection for a beautiful and functional Arch Linux + Hyprland setup with Catppuccin Mocha theme
+> My personal dotfiles collection for a beautiful, minimal, and functional Arch Linux + Hyprland setup with Catppuccin Mocha theme
 
 <div align="center">
 
@@ -12,10 +12,20 @@
 
 ## 📸 Gallery
 
-| Desktop | Applications | Lock Screen |
+| Desktop | Eye candy | Lock Screen |
 |---------|-------------|-------------|
-| ![Desktop Screenshot](screenshots/desktop.png) | ![Apps Screenshot](screenshots/apps.png) | ![Lock Screenshot](screenshots/lock.png) |
-| *Clean desktop with QuickShell widgets* | *Application launcher and terminals* | *Hyprlock with blur effects* |
+| ![Desktop Screenshot](assets/justdesktop.png) | ![Eye Candy Screenshot](assets/candy.png) | ![Lock Screenshot](assets/lock.png) |
+| *WIP QuickShell Bar* | *Some Eye Candy* | *Hyprlock* |
+
+| Explorer & Terminal | Menus | Tmux, Neovim & Btop |
+|---------|-------------|-------------|
+| ![Explorer Screenshot](assets/desktop1.png) | ![Menus Screenshot](assets/menus.png) | ![tmux neovim Screenshot](assets/tmux.png) |
+| *Qrchis Purple theme & Transparent Terminal* | *Fuzzel, Atuin, & fzf* | *Tmmux, Neovim, & Btop* |
+
+| Zen Browser | Wlogout | Zed editor |
+|---------|-------------|-------------|
+| ![Browser Screenshot](assets/web.png) | ![Wlogout Screenshot](assets/wlogout.png) | ![Zed Screenshot](assets/zed.png) |
+| *Zen Browser Compact mode* | *Wlogout* | *Zed editor * |
 
 ---
 
@@ -65,7 +75,7 @@
 
 ## 🎨 Theme
 
-This setup uses the **Catppuccin Mocha** colorscheme throughout all applications for a cohesive and elegant dark theme experience.
+This setup uses the **Catppuccin Mocha** colorscheme throughout most applications for a cohesive and elegant dark theme experience and I have placed much emphasis on lavender color than others :)
 
 ---
 
@@ -76,20 +86,18 @@ This setup uses the **Catppuccin Mocha** colorscheme throughout all applications
 
 ### Prerequisites
 
-Ensure you have the following packages installed (Arch Linux package names):
+Ensure you have a functional Hyprland setup with all hypr ecosystem packages:
 
 ```bash
-# Core system
-hyprland uwsm quickshell fuzzel foot hyprlock wlogout
+sudo pacman -S uwsm quickshell fuzzel foot hyprlock wlogout bob neovim zed nautilus tmux fish fzf atuin btop cava
 
-# Applications
-neovim zed-editor zen-browser-bin nautilus waypaper-git
+yay -S zen-browser-bin waypaper-git
+```
 
-# Development tools
-tmux fish fzf atuin btop cava
-
-# Additional dependencies
-git stow # for dotfile management
+### Get Neovim Nightly (0.12.+)
+```bash
+bob install nightly
+bob use nightly
 ```
 
 ### Quick Setup
@@ -110,9 +118,6 @@ git stow # for dotfile management
    ```bash
    # Method 1: Direct copy (simple)
    cp -r config/* ~/.config/
-
-   # Method 2: Using stow (recommended)
-   stow . # from the repo root
    ```
 
 4. **Restart Hyprland or reboot**
@@ -148,7 +153,7 @@ Special thanks to these amazing projects and creators for inspiration, code snip
 - **[caelestia-dots/caelestia](https://github.com/caelestia-dots/caelestia)** - Beautiful aesthetic references
 - **[codingjerk/dotfiles](https://github.com/codingjerk/dotfiles)** - Clean configuration structure
 - **AI Chatbots** - For troubleshooting and configuration assistance
-- **Hyprland Community** - For the amazing compositor and continuous support
+- **Hyprland Community** - For the amazing Configurations and continuous support
 - **Catppuccin Team** - For the beautiful color palette
 
 ---
