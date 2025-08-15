@@ -1,74 +1,31 @@
-@import "colors.css";
-
 * {
+    all: unset;
     background-image: none;
-    box-shadow: none;
+    transition: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
 }
 
 window {
-    background-color: alpha(@background, 0.9);
+    background: rgba(30, 30, 46, 0.9);
 }
 
 button {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20%;
-    background-color: alpha(@surface_container, 0.6);
-    animation: gradient_f 20s ease-in infinite;
-    border-radius: 80px; /* Increased border radius for a more rounded look */
-    border: 0px;
-    transition:
-        all 0.2s cubic-bezier(0.55, 0, 0.28, 1.682),
-        box-shadow 0.2s ease-in-out,
-        background-color 0.2s ease-in-out;
+    font-family: "Material Symbols Outlined";
+    font-size: 3rem;
+    background-color: #1e1e2e;
+    color: #b4befe;
+    border-color: #b4befe;
+    border-radius: 1.5rem;
+    border-style: solid;
+    border-width: 3px;
+    margin: 0.5rem;
+    padding: 2.5rem;
+    min-width: 2rem;
+    min-height: 2rem;
 }
 
-button:focus {
-    background-size: 22%;
-    border: 0px;
-}
-
+button:focus,
+button:active,
 button:hover {
-    background-color: @tertiary;
-    opacity: 1;
-    color: @primary_container;
-    background-size: 30%;
-    margin: 0px;
-    border-radius: 80px;
-}
-
-/* Adjust the size of the icon or content inside the button */
-button span {
-    font-size: 1.2em; /* Increase the font size */
-    color: @on_surface;
-}
-
-#logout {
-    margin: 10px;
-    border-radius: 20px;
-    background-image: image(url("./icons/logout.png"));
-}
-
-#logout:hover {
-    background-image: image(url("./icons/logout-hover.png"));
-}
-
-#shutdown {
-    margin: 10px;
-    border-radius: 20px;
-    background-image: image(url("./icons/power.png"));
-}
-
-#shutdown:hover {
-    background-image: image(url("./icons/power-hover.png"));
-}
-
-#reboot {
-    margin: 10px;
-    border-radius: 20px;
-    background-image: image(url("./icons/restart.png"));
-}
-
-#reboot:hover {
-    background-image: image(url("./icons/restart-hover.png"));
+    background-color: rgb(48, 50, 66);
+    border-radius: 2rem;
 }
