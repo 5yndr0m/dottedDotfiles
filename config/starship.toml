@@ -1,16 +1,15 @@
 # Rose Pine Starship Config - Just enough, not too much
-# version: 1.0.0
+# version: 1.1.0
 "$schema" = 'https://starship.rs/config-schema.json'
 
 add_newline = true
 continuation_prompt = "... "
-palette = 'rose-pine'
+palette = 'catppuccin-mocha'
 
 format = """$username\
 $hostname\
 $directory\
 $git_branch\
-$git_status\
 $docker_context\
 $kubernetes\
 $aws\
@@ -25,146 +24,150 @@ $terraform\
 $character"""
 
 right_format = """$cmd_duration\
+$git_status\
 $time"""
 
-[palettes.rose-pine]
-# Base Rose Pine colors
-base = '#191724'
-surface = '#1f1d2e'
-overlay = '#26233a'
-muted = '#6e6a86'
-subtle = '#908caa'
-text = '#e0def4'
-love = '#eb6f92'
-gold = '#f6c177'
-rose = '#ebbcba'
-pine = '#31748f'
-foam = '#9ccfd8'
-iris = '#c4a7e7'
-highlight_low = '#21202e'
-highlight_med = '#403d52'
-highlight_high = '#524f67'
+[palettes.catppuccin-mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
 
 [character]
-success_symbol = "[>](foam bold)"
-error_symbol = "[x](love bold)"
-vimcmd_symbol = "[:](@{iris})"
+success_symbol = "[●](teal)"
+error_symbol = "[●](red)"  
+vimcmd_symbol = "[●](lavender)" 
 
 [username]
-style_user = "bg:overlay fg:iris"
-style_root = "bg:overlay fg:love"
-format = "[](fg:overlay)[ 󰧱 $user ]($style)[](fg:overlay)@"
+style_user = "fg:lavender"
+style_root = "fg:red"
+format = "[$user]($style)"
 show_always = true
 
 [hostname]
-ssh_only = false
-format = "[](fg:overlay)[ $hostname ]($style)[](fg:overlay) "
-style = "bg:overlay fg:iris"
+ssh_only = true 
+format = "[ $hostname]($style)"
+style = "fg:lavender"
 
 [directory]
 truncation_length = 3
 truncation_symbol = "…/"
 read_only = " [RO]"
-format = "[](fg:overlay)[ $path ]($style)[](fg:overlay)[$read_only](fg:love) "
-style = "bg:overlay fg:pine"
-
-[directory.substitutions]
-Documents = "󰈙"
-Downloads = " "
-Music = " "
-Pictures = " "
+format = "[ $path]($style)[](fg:overlay1)[$read_only](fg:red) "
+style = "fg:sapphire"
 
 [git_branch]
-format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) "
-style = "bg:overlay fg:foam"
+format = "[ $symbol $branch ]($style)"
+style = "fg:teal"
 symbol = ""
 truncation_length = 20
 truncation_symbol = "..."
 
 [git_status]
 disabled = false
-style = "bg:overlay fg:love"
-format = '[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) '
-up_to_date = '[ ✓ ](bg:overlay fg:iris)'
-conflicted = '[!](bg:overlay fg:love)'
-untracked = '[?\($count\)](bg:overlay fg:gold)'
-stashed = '[\$](bg:overlay fg:iris)'
-modified = '[*\($count\)](bg:overlay fg:gold)'
-staged = '[+\($count\)](bg:overlay fg:gold)'
-renamed = '[»\($count\)](bg:overlay fg:iris)'
-deleted = '[x\($count\)](bg:overlay fg:love)'
-ahead = '[⇡\(${count}\)](bg:overlay fg:foam)'
-behind = '[⇣\(${count}\)](bg:overlay fg:rose)'
-diverged = '⇕[\[](bg:overlay fg:iris)[⇡\(${ahead_count}\)](bg:overlay fg:foam)[⇣\(${behind_count}\)](bg:overlay fg:rose)[\]](bg:overlay fg:iris)'
+format = '([$all_status$ahead_behind]($style))'
+up_to_date = '[ ✓ ](fg:lavender)'
+conflicted = '[!](fg:red)'
+untracked = '[?\($count\)](fg:yellow)'
+stashed = '[\$](fg:lavender)'
+modified = '[*\($count\)](fg:yellow)'
+staged = '[+\($count\)](fg:yellow)'
+renamed = '[»\($count\)](fg:lavender)'
+deleted = '[x\($count\)](fg:red)'
+ahead = '[⇡\(${count}\)](fg:teal)'
+behind = '[⇣\(${count}\)](fg:rosewater)'
+diverged = '⇕[\[⇡\(${ahead_count}\)](fg:teal)[⇣\(${behind_count}\)](fg:rosewater)[\]](fg:lavender)'
 
 [cmd_duration]
 min_time = 2000
-format = "[](fg:overlay)[ $duration ]($style)[](fg:overlay) "
-style = "bg:overlay fg:text"
+format = "[ $duration ]($style)"
+style = "fg:text"
 
 [time]
 disabled = false
-format = "[](fg:overlay)[ $time 󰴈 ]($style)[](fg:overlay)"
-style = "bg:overlay fg:rose"
+format = "[ $time]($style)"
+style = "fg:rosewater"
 time_format = "%H:%M"
 
 # Language indicators - minimal, no versions but with Rose Pine styling
 [python]
-format = "[](fg:overlay)[ py ]($style)[](fg:overlay) "
-style = "bg:overlay fg:pine"
+format = "[](fg:overlay1)[ py ]($style)[](fg:overlay1) "
+style = "fg:sapphire"
 
 [nodejs]
-format = "[](fg:overlay)[ js ]($style)[](fg:overlay) "
-style = "bg:overlay fg:pine"
+format = "[](fg:overlay1)[ js ]($style)[](fg:overlay1) "
+style = "fg:sapphire"
 symbol = "󰎙 "
 
 [rust]
-format = "[](fg:overlay)[ rs ]($style)[](fg:overlay) "
-style = "bg:overlay fg:pine"
+format = "[](fg:overlay1)[ rs ]($style)[](fg:overlay1) "
+style = "fg:sapphire"
 symbol = " "
 
 [golang]
-format = "[](fg:overlay)[ go ]($style)[](fg:overlay) "
-style = "bg:overlay fg:pine"
+format = "[](fg:overlay1)[ go ]($style)[](fg:overlay1) "
+style = "fg:sapphire"
 symbol = " "
 
 [java]
-format = "[](fg:overlay)[ java ]($style)[](fg:overlay) "
-style = "bg:overlay fg:pine"
+format = "[](fg:overlay1)[ java ]($style)[](fg:overlay1) "
+style = "fg:sapphire"
 symbol = " "
 
 [lua]
-format = "[](fg:overlay)[ lua ]($style)[](fg:overlay) "
-style = "bg:overlay fg:pine"
+format = "[](fg:overlay1)[ lua ]($style)[](fg:overlay1) "
+style = "fg:sapphire"
 
 [ruby]
-format = "[](fg:overlay)[ rb ]($style)[](fg:overlay) "
-style = "bg:overlay fg:pine"
+format = "[](fg:overlay1)[ rb ]($style)[](fg:overlay1) "
+style = "fg:sapphire"
 
 # Cloud and infrastructure
 [terraform]
-format = "[](fg:overlay)[ tf ]($style)[](fg:overlay) "
-style = "bg:overlay fg:pine"
+format = "[](fg:overlay1)[ tf ]($style)[](fg:overlay1) "
+style = "fg:sapphire"
 
 [docker_context]
-format = "[](fg:overlay)[ docker ]($style)[](fg:overlay) "
-style = "bg:overlay fg:pine"
+format = "[](fg:overlay1)[ docker ]($style)[](fg:overlay1) "
+style = "fg:sapphire"
 
 [kubernetes]
-format = "[](fg:overlay)[ k8s ]($style)[](fg:overlay) "
-style = "bg:overlay fg:pine"
+format = "[](fg:overlay1)[ k8s ]($style)[](fg:overlay1) "
+style = "fg:sapphire"
 
 [aws]
-format = "[](fg:overlay)[ aws ]($style)[](fg:overlay) "
-style = "bg:overlay fg:foam"
+format = "[](fg:overlay1)[ aws ]($style)[](fg:overlay1) "
+style = "fg:sapphire"
 
 [gcloud]
-format = "[](fg:overlay)[ gcp ]($style)[](fg:overlay) "
-style = "bg:overlay fg:pine"
+format = "[](fg:overlay1)[ gcp ]($style)[](fg:overlay1) "
+style = "fg:sapphire"
 
 [azure]
-format = "[](fg:overlay)[ az ]($style)[](fg:overlay) "
-style = "bg:overlay fg:pine"
+format = "[](fg:overlay1)[ az ]($style)[](fg:overlay1) "
+style = "fg:sapphire"
 
 # Disable everything else
 [package]
