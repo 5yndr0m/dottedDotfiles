@@ -1,16 +1,14 @@
 #!/bin/bash
 
-# Battery status script for hyprlock
-# Place this in ~/.config/hypr/hyprlock/battery-status.sh
-# Make executable with: chmod +x ~/.config/hypr/hyprlock/battery-status.sh
+# Outputs Material Symbols icon names based on battery state
 
-# Check if battery exists
+# Desktop fallback
 if [ ! -d "/sys/class/power_supply/BAT0" ] && [ ! -d "/sys/class/power_supply/BAT1" ]; then
-    echo "🖥️ Desktop"
+    echo "desktop_windows"
     exit 0
 fi
 
-# Find the battery (usually BAT0 or BAT1)
+# Determine battery path
 BATTERY=""
 if [ -d "/sys/class/power_supply/BAT0" ]; then
     BATTERY="BAT0"
@@ -18,41 +16,33 @@ elif [ -d "/sys/class/power_supply/BAT1" ]; then
     BATTERY="BAT1"
 fi
 
-if [ -z "$BATTERY" ]; then
-    echo "🖥️ Desktop"
-    exit 0
-fi
-
-# Get battery information
+# Read battery data
 CAPACITY=$(cat /sys/class/power_supply/$BATTERY/capacity 2>/dev/null)
 STATUS=$(cat /sys/class/power_supply/$BATTERY/status 2>/dev/null)
 
-# Default values if files don't exist
 CAPACITY=${CAPACITY:-0}
 STATUS=${STATUS:-Unknown}
 
-# Choose icon based on charging status and level
 if [ "$STATUS" = "Charging" ]; then
-    ICON="🔌"
+    echo "battery_charging_full"
 elif [ "$STATUS" = "Full" ]; then
-    ICON="🔋"
-elif [ "$CAPACITY" -ge "80" ]; then
-    ICON="🔋"
-elif [ "$CAPACITY" -ge "60" ]; then
-    ICON="🔋"
-elif [ "$CAPACITY" -ge "40" ]; then
-    ICON="🔋"
-elif [ "$CAPACITY" -ge "20" ]; then
-    ICON="🪫"
+    echo "battery_full"
 else
-    ICON="🪫"
-fi
-
-# Output format
-if [ "$STATUS" = "Charging" ]; then
-    echo "$CAPACITY% (Charging)"
-elif [ "$STATUS" = "Full" ]; then
-    echo "$CAPACITY% (Full)"
-else
-    echo "$CAPACITY%"
+    if [ "$CAPACITY" -ge 90 ]; then
+        echo "battery_full"
+    elif [ "$CAPACITY" -ge 80 ]; then
+        echo "battery_6_bar"
+    elif [ "$CAPACITY" -ge 60 ]; then
+        echo "battery_5_bar"
+    elif [ "$CAPACITY" -ge 50 ]; then
+        echo "battery_4_bar"
+    elif [ "$CAPACITY" -ge 30 ]; then
+        echo "battery_3_bar"
+    elif [ "$CAPACITY" -ge 15 ]; then
+        echo "battery_2_bar"
+    elif [ "$CAPACITY" -ge 5 ]; then
+        echo "battery_1_bar"
+    else
+        echo "battery_0_bar"
+    fi
 fi
