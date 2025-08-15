@@ -1,0 +1,10 @@
+sessions:
+  - name: Hyprland
+    description: Hyprland Wayland compositor
+    command: Hyprland
+    env:
+      XDG_CURRENT_DESKTOP: Hyprland
+      XDG_SESSION_TYPE: wayland
+      XDG_SESSION_DESKTOP: Hyprland
+autostart: true
+default_session: Hyprland

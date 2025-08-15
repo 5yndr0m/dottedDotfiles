@@ -13,5 +13,11 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION = 1
 export QT_QPA_PLATFORMTHEME = qt5ct
 
 export XCURSOR_SIZE = 24
-export HYPRCURSOR_THEME = rose_pine_cursor
+export HYPRCURSOR_THEME = capitaine-cursors
 export HYPRCURSOR_SIZE = 24
+
+export QT_QPA_PLATFORMTHEME='qt5ct'
+export QT_WAYLAND_DISABLE_WINDOWDECORATION='1'
+export QT_AUTO_SCREEN_SCALE_FACTOR='1'
+export XCURSOR_THEME='capitaine-cursors'
+export XCURSOR_SIZE='24'
