@@ -11,6 +11,7 @@ Column {
         text: Time.date
         horizontalAlignment: Text.AlignHCenter
         font.bold: true
+        font.pixelSize: 14
         color: "#cdd6f4"
     }
 
@@ -18,6 +19,7 @@ Column {
         text: Time.time
         horizontalAlignment: Text.AlignHCenter
         font.bold: true
+        font.pixelSize: 14
         color: "#cdd6f4"
     }
 }
