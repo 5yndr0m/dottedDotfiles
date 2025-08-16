@@ -2,21 +2,19 @@
 import Quickshell
 import QtQuick
 import QtQuick.Layouts
-import Quickshell.Io
 import Quickshell.Wayland
-import Qt5Compat.GraphicalEffects
 
 import qs.components
 import qs.modules.widget
 import qs.modules.bar.components
 
 Scope {
-    // no more time object
 
     Variants {
         model: Quickshell.screens
 
         PanelWindow {
+            id: rootbar
             required property var modelData
             screen: modelData
 
@@ -35,32 +33,33 @@ Scope {
                 anchors.topMargin: 5
                 anchors.bottomMargin: 5
 
-                // Top center - workspaces
                 WorkspaceWidget {
                     Layout.alignment: Qt.AlignHCenter
                 }
 
-                // Spacer to push clock to bottom
                 Item {
                     Layout.fillHeight: true
                 }
 
-                // Bottom center - clock
                 ClockWidget {
                     Layout.alignment: Qt.AlignHCenter
                 }
             }
+            ActiveWindow {
+                screen: rootbar.modelData
+            }
+
             PanelWindow {
                 id: topLeftPanel
                 anchors.top: true
                 anchors.left: true
 
                 color: "transparent"
-                screen: modelData
+                screen: rootbar.modelData
                 margins.left: 36
                 WlrLayershell.exclusionMode: ExclusionMode.Ignore
                 visible: true
-                WlrLayershell.layer: WlrLayer.Background
+                WlrLayershell.layer: WlrLayer.Bottom
                 aboveWindows: false
                 implicitHeight: 24
 
@@ -80,10 +79,10 @@ Scope {
                 anchors.top: true
                 anchors.right: true
                 color: "transparent"
-                screen: modelData
+                screen: rootbar.modelData
                 WlrLayershell.exclusionMode: ExclusionMode.Ignore
                 visible: true
-                WlrLayershell.layer: WlrLayer.Background
+                WlrLayershell.layer: WlrLayer.Bottom
                 aboveWindows: false
 
                 implicitHeight: 24
@@ -94,7 +93,7 @@ Scope {
                     size: 1.3
                     fillColor: "#1e1e2e"
                     offsetX: 39
-                    offsetY: 0
+                    offsetY: 10
                     anchors.top: parent.top
                 }
             }
@@ -104,11 +103,11 @@ Scope {
                 anchors.bottom: true
                 anchors.left: true
                 color: "transparent"
-                screen: modelData
+                screen: rootbar.modelData
                 margins.left: 40
                 WlrLayershell.exclusionMode: ExclusionMode.Ignore
                 visible: true
-                WlrLayershell.layer: WlrLayer.Background
+                WlrLayershell.layer: WlrLayer.Bottom
                 aboveWindows: false
 
                 implicitHeight: 24
@@ -116,10 +115,10 @@ Scope {
                 Corner {
                     id: bottomLeftCorner
                     position: "topleft"
-                    size: 1.5
+                    size: 1.3
                     fillColor: "#1e1e2e"
-                    offsetX: -46
-                    offsetY: -6
+                    offsetX: -39
+                    offsetY: -2
                     anchors.top: parent.top
                 }
             }
@@ -129,10 +128,10 @@ Scope {
                 anchors.bottom: true
                 anchors.right: true
                 color: "transparent"
-                screen: modelData
+                screen: rootbar.modelData
                 WlrLayershell.exclusionMode: ExclusionMode.Ignore
                 visible: true
-                WlrLayershell.layer: WlrLayer.Background
+                WlrLayershell.layer: WlrLayer.Bottom
                 aboveWindows: false
 
                 implicitHeight: 24
@@ -143,7 +142,7 @@ Scope {
                     size: 1.3
                     fillColor: "#1e1e2e"
                     offsetX: 39
-                    offsetY: 0
+                    offsetY: -2
                     anchors.top: parent.top
                 }
             }
