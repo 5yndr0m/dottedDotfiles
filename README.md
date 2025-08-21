@@ -127,6 +127,30 @@ bob use nightly
 
 ---
 
+🚧 To-Do List
+Current development priorities and planned features:
+<details open>
+<summary><b>🎛️ Status Bar (QuickShell) Improvements</b></summary>
+
+ Volume Indicator - Audio level display with popup controls
+ Battery Indicator - Power status with percentage and charging state
+ Enhanced Date & Time - Better formatting
+ System Tray - Application tray integration
+
+</details>
+<details open>
+<summary><b>🎵 Media & Interface</b></summary>
+
+ Music Controls - Media player integration with play/pause/skip
+ Lock Screen - Custom lock configuration and styling
+ Session Management
+ OSD (On-Screen Display) - Volume, and brightness overlays
+ Notifications - Custom notification setup and styling
+
+</details>
+
+---
+
 ## 🤝 Contributing
 
 Contributions are welcome! Here's how you can help:
