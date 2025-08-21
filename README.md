@@ -1,3 +1,5 @@
+> [!IMPORTANT]
+> **Development Branch**: Things are broken here. I'm redoing my Quickshell setup. Be warned....
 # dottedDotfiles ✨
 
 > My personal dotfiles collection for a beautiful, minimal, and functional Arch Linux + Hyprland setup with Catppuccin Mocha theme
@@ -11,6 +13,7 @@
 </div>
 
 ## 📸 Gallery
+### Things might not exactly look like in the images
 
 | Desktop | Eye candy | Lock Screen |
 |---------|-------------|-------------|
@@ -134,7 +137,7 @@ Current development priorities and planned features:
 
  Volume Indicator - Audio level display with popup controls
  Battery Indicator - Power status with percentage and charging state
- Enhanced Date & Time - Better formatting
+ Enhanced Date - Better formatting
  System Tray - Application tray integration
 
 </details>
@@ -144,8 +147,19 @@ Current development priorities and planned features:
  Music Controls - Media player integration with play/pause/skip
  Lock Screen - Custom lock configuration and styling
  Session Management
+ Notifications History Manager
+
+</details>
+
+
+<details open>
+<summary><b>These things are done</b></summary>
+
+ Workspaces
+ Active Window Name/Title
  OSD (On-Screen Display) - Volume, and brightness overlays
- Notifications - Custom notification setup and styling
+ Notifications 
+ Enhanced Time - Better formatting
 
 </details>
 
